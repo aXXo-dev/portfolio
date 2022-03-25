@@ -18,6 +18,10 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div
+            id="overlay"
+            className="text-white z-40"
+          ></div>
         </body>
       </Html>
     );

@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  header {
+    @apply sm:px-10;
+    @apply lg:px-40;
+  }
+
+  main {
+    @apply sm:px-10;
+    @apply lg:px-40;
+  }
+}
+
+#__next {
+  &.overlay-active {
+    color: #fff;
+    overflow-y: hidden !important;
+    transition: 500ms;
+  }
+  transition: 500ms;
+}
+
+.idk {
+  div {
+    border-radius: 50%;
+    border: solid #000;
+
+    width: 20px;
+    height: 20px;
+
+    &.active {
+      background: #000;
+    }
+  }
+}
+
+#overlay {
+  top: 0;
+  right: 0;
+  position: fixed;
+
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+
+  transition: 500ms;
+  background: #000;
+
+  * {
+    display: none;
+  }
+
+  &.active {
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    transition: 500ms;
+    z-index: 40;
+
+    * {
+      display: flex;
+    }
+  }
+
+  .transition {
+    animation: fade 500ms;
+  }
+}
+
+@keyframes fade {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    z-index: 40;
+    opacity: 1;
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+.Burger {
+  height: 28px;
+  width: 30px;
+  transition: 300ms;
+  position: relative;
+
+  div {
+    background: #000;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+
+    &:nth-child(1) {
+      top: 0;
+      transition: 300ms;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 300ms;
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+      transition: 300ms;
+    }
+  }
+
+  &.active {
+    height: 28px;
+
+    div {
+      background: #fff;
+
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        transform-origin: bottom left;
+        transition: 300ms;
+      }
+
+      &:nth-child(2) {
+        transform: translateX(100%);
+        transition: 300ms;
+        opacity: 0;
+        width: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: top left;
+        transition: 300ms;
+      }
+    }
+  }
+}
