@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }) {
   const [overlay, setOverlay] = useState();
 
   useEffect(() => {
-    localStorage.setItem("transition", false)
+    localStorage.setItem("transition", false);
     setOverlay(document.getElementById("overlay"));
   }, []);
 
