@@ -8,10 +8,9 @@
     @apply lg:px-40;
   }
 
-  main {
+  section {
     @apply sm:px-10;
     @apply lg:px-40;
-    //@apply px-10;
   }
 }
 
@@ -67,7 +66,6 @@ html {
       transform: translateX(100vw);
       right: 0;
     }
-    
   }
 
   &.active {

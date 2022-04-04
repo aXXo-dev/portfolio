@@ -10,9 +10,11 @@ export default function GetPost(props) {
       <>
         <Header blog={true} />
         <main>
-          <div className="Markdown">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
-          </div>
+          <section>
+            <div className="Markdown">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
+          </section>
         </main>
       </>
     );

@@ -16,18 +16,20 @@ export default function BlogHome(props) {
   return (
     <>
       <Header />
-      <main className="blog flex flex-col gap-2">
-        {posts &&
-          posts.map((post) => (
-            <div
-              key={post.id}
-              className="flex flex-col cursor-pointer"
-              onClick={() => getPost(post.file)}
-            >
-              <span className="text-2xl font-bold">{post.title}</span>
-              <span className="text-lg">{post.desc}</span>
-            </div>
-          ))}
+      <main>
+        <section className="blog flex flex-col gap-2">
+          {posts &&
+            posts.map((post) => (
+              <div
+                key={post.id}
+                className="flex flex-col cursor-pointer"
+                onClick={() => getPost(post.file)}
+              >
+                <span className="text-2xl font-bold">{post.title}</span>
+                <span className="text-lg">{post.desc}</span>
+              </div>
+            ))}
+        </section>
       </main>
     </>
   );
