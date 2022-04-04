@@ -6,6 +6,7 @@ export default function Burger() {
   const onToggle = () => {
     document.getElementById("__next").classList.toggle("overlay-active");
     document.getElementById("overlay").classList.toggle("active");
+    document.querySelector("html").classList.toggle("active");
     setToggle(!toggle);
   };
 

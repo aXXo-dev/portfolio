@@ -18,7 +18,7 @@ export default function MyApp({ Component, pageProps }) {
     <AnimateSharedLayout>
       {overlay &&
         createPortal(
-          <nav className="flex flex-col text-center h-screen justify-center items-center gap-5">
+          <nav className="flex flex-col text-center h-screen justify-center items-center gap-5 absolute z-[100] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <A className="text-5xl" href="/">
               Home
             </A>

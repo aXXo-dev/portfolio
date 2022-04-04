@@ -5,7 +5,7 @@ import Burger from "../ui/Burger";
 
 export default function Header({ blog }) {
   return (
-    <header className="py-5 z-50 flex justify-between items-center sticky">
+    <header className="py-5 z-50 flex justify-between items-center sticky top-0">
       <Link href={blog ? "/blog" : "/"}>
         <a className="text-3xl font-bold">aXXo-dev</a>
       </Link>

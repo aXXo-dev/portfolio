@@ -6,13 +6,20 @@
   header {
     @apply sm:px-10;
     @apply lg:px-40;
-    //@apply px-10;
   }
 
   main {
     @apply sm:px-10;
     @apply lg:px-40;
     //@apply px-10;
+  }
+}
+
+html {
+  overflow-x: hidden;
+
+  &.active {
+    overflow-y: hidden;
   }
 }
 
@@ -41,36 +48,40 @@
 }
 
 #overlay {
+  overflow-x: hidden;
   top: 0;
-  right: 0;
-  position: fixed;
+  position: absolute;
 
-  width: 0;
-  height: 0;
-  opacity: 0;
   z-index: -1;
+  transition: 400ms;
 
-  transition: 500ms;
-  background: #000;
+  .black {
+    height: 33.33vh;
+    width: 100vw;
 
-  * {
-    display: none;
+    left: 0;
+    transform: translateX(-100vw);
+    transition: 500ms;
+
+    &:nth-child(2) {
+      transform: translateX(100vw);
+      right: 0;
+    }
+    
   }
 
   &.active {
-    width: 100vw;
-    height: 100vh;
-    opacity: 1;
-    transition: 500ms;
     z-index: 40;
+    transition: 500ms;
+    opacity: 1;
 
-    * {
-      display: flex;
+    background: #000;
+    transition-property: background;
+    transition-delay: 300ms;
+
+    .black {
+      transform: translateX(0);
     }
-  }
-
-  .transition {
-    animation: fade 500ms;
   }
 }
 
