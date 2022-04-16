@@ -4,7 +4,7 @@ import Fade from "../../components/Fade";
 export default function Contact() {
   return (
     <>
-      <Header />
+      <Header index={3} />
       <Fade />
       <main className="Contact">
         <h1>Contact</h1>

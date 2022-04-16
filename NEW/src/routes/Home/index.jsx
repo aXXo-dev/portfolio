@@ -5,7 +5,7 @@ import logo from "../../assets/logo.svg";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header index={0} />
       <Fade />
       <main className="Home flex items-center justify-between">
         <div className="flex flex-col gap-5 w-[45%] sm:w-full sm:text-center">
