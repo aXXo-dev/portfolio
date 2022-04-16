@@ -46,4 +46,85 @@
   .logo {
     @apply w-1/3 sm:hidden;
   }
+
+  .Header {
+    @apply sticky z-50;
+  }
+
+  .Sidebar {
+    @apply bg-[#414141] absolute w-full min-h-full left-0 opacity-0 z-40;
+    top: 0 !important;
+    pointer-events: none;
+    transition-property: opacity !important;
+    transition: 500ms;
+    
+    nav {
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+      @apply flex-col items-center text-3xl;
+    }
+    
+    &.active {
+      @apply block opacity-100;
+      pointer-events: auto;
+      transition-property: opacity z-index !important;
+      transition: 500ms;
+    }
+  }
+
+  .Burger {
+    height: 28px;
+    width: 30px;
+    transition: 300ms;
+    position: relative;
+
+    div {
+      background: #fff;
+      height: 5px;
+      width: 100%;
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 0;
+        transition: 300ms;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 300ms;
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+        transition: 300ms;
+      }
+    }
+
+    &.active {
+      height: 28px;
+
+      div {
+        background: #fff;
+
+        &:nth-child(1) {
+          transform: rotate(45deg);
+          transform-origin: bottom left;
+          transition: 300ms;
+        }
+
+        &:nth-child(2) {
+          transform: translateX(100%);
+          transition: 300ms;
+          opacity: 0;
+          width: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          transform-origin: top left;
+          transition: 300ms;
+        }
+      }
+    }
+  }
 }
