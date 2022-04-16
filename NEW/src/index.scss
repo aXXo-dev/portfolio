@@ -4,11 +4,12 @@
 
 @layer base {
   html {
-    @apply text-white bg-[#1c1c1c] overflow-x-hidden;
+    @apply text-white bg-[#1c1c1c];
+  }
 
-    body {
-      @apply overflow-x-hidden;
-    }
+  html,
+  body {
+    @apply overflow-x-hidden max-w-full;
   }
 
   header {

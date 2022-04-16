@@ -1,16 +1,25 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+const LinkTo = ({ className, children, active, to }) => {
+  return active ? (
+    <a className={`${className} font-bold`}>{children}</a>
+  ) : (
+    <Link to={to} className={className}>
+      {children}
+    </Link>
+  );
+};
 
 // This header is a mess but it works
 export default function Header({ children, index }) {
-  const LinkTo = ({ className, children, active, to }) => {
-    return active ? (
-      <a className={`${className} font-bold`}>{children}</a>
-    ) : (
-      <Link to={to} className={className}>
-        {children}
-      </Link>
-    );
-  };
+  const [isMobile, setMobile] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setMobile(window.innerWidth <= 600);
+    });
+  }, []);
 
   return (
     <header className="flex items-center justify-between">
@@ -18,23 +27,27 @@ export default function Header({ children, index }) {
         aXXo
       </LinkTo>
 
-      <nav className="flex gap-5">
-        <LinkTo to="/" active={index === 0}>
-          Home
-        </LinkTo>
+      {!isMobile ? (
+        <nav className="flex gap-5">
+          <LinkTo to="/" active={index === 0}>
+            Home
+          </LinkTo>
 
-        <LinkTo to="/about" active={index === 1}>
-          About
-        </LinkTo>
+          <LinkTo to="/about" active={index === 1}>
+            About
+          </LinkTo>
 
-        <LinkTo to="/work" active={index === 2}>
-          Work
-        </LinkTo>
+          <LinkTo to="/work" active={index === 2}>
+            Work
+          </LinkTo>
 
-        <LinkTo to="/contact" active={index === 3}>
-          Contact
-        </LinkTo>
-      </nav>
+          <LinkTo to="/contact" active={index === 3}>
+            Contact
+          </LinkTo>
+        </nav>
+      ) : (
+        <h1>MOBILE</h1>
+      )}
     </header>
   );
 }

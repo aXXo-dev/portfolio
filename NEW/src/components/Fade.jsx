@@ -3,15 +3,25 @@ import { motion } from "framer-motion";
 
 export default function Fade() {
   const leftVariant = {
-    initial: { x: "0" },
-    animate: { x: "-100vw" },
-    exit: { x: "0" },
+    initial: { width: "100vw", x: "0" },
+    animate: {
+      x: "-100vw",
+      transitionEnd: {
+        width: 0,
+      },
+    },
+    exit: { width: "100vw", x: "0" },
   };
 
   const rightVariant = {
-    initial: { x: "0" },
-    animate: { x: "100vw" },
-    exit: { x: "0" },
+    initial: { width: "100vw", x: "0" },
+    animate: {
+      x: "100vw",
+      transitionEnd: {
+        width: 0,
+      },
+    },
+    exit: { width: "100vw", x: "0" },
   };
 
   const Child = ({ className, right }) => {
