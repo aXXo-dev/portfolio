@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Fade from "../../components/Fade";
+
 import logo from "../../assets/logo.svg";
 
 export default function Home() {
@@ -16,7 +18,7 @@ export default function Home() {
             I enjoy simplicity and building new things in a team
           </span>
           <div className="mt-5">
-            <a className="bg-[#414141] px-10 py-3 rounded-full">GET IN TOUCH</a>
+            <Link className="bg-[#414141] px-10 py-3 rounded-full" to="/contact">GET IN TOUCH</Link>
           </div>
         </div>
 

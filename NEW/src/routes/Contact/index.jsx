@@ -7,7 +7,9 @@ export default function Contact() {
       <Header index={3} />
       <Fade />
       <main className="Contact">
-        <h1>Contact</h1>
+        <p className="text-center">
+          Here I will specify how you can reach me soon.
+        </p>
       </main>
     </>
   );

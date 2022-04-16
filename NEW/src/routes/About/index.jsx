@@ -9,7 +9,7 @@ export default function About() {
       <Header index={1} />
       <Fade />
       <main className="About">
-        <h1>About</h1>
+        <p className="text-center text-xl">I have been in the community for a bit over 4 years and began a <a target="_blank" href="https://www.youtube.com/channel/UCwR9bmRflFCa7_pKyJ5CvtA" className="text-[#ff0000]">YouTube</a> channel.</p>
       </main>
     </>
   );

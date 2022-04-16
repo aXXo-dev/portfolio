@@ -7,7 +7,7 @@ export default function Work() {
       <Header index={2} />
       <Fade />
       <main className="Work">
-        <h1>Work</h1>
+       <p className="text-center">Here I will add my projects soon.</p>
       </main>
     </>
   );
